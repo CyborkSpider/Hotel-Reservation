@@ -1,39 +1,50 @@
 ﻿# Hotel Reservation (C++ Console)
 
-![Language](https://img.shields.io/badge/language-C%2B%2B11-blue)
+![Language](https://img.shields.io/badge/language-C%2B%2B17-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Simple console-based hotel reservation program written in C++ for first-year students. The app uses only arrays (no structs/classes) and basic I/O/control flow.
+Console-based hotel reservation program written in C++. Refactored to OOP with a simple CLI and CSV persistence.
 
 ## Features
 - 3 room types: Standard, Deluxe, Suite.
-- Multiple bookings using arrays only.
-- Checks room availability and prints:
-  - "Room is already booked" if taken.
-  - "Booking successful" if free.
+- OOP design:
+  - `Booking` holds booking data.
+  - `Hotel` handles business logic + persistence.
+  - `ConsoleUI` handles input/output.
+- Date-based availability:
+  - Validates `YYYY-MM-DD` format.
+  - Prevents booking the same room if date ranges overlap.
 - Menu:
   1) Book a room
   2) Show bookings
-  3) Exit
+  3) Cancel booking (by ID)
+  4) Search bookings (by guest name / room number)
+  5) Show available rooms (for a date range + optional room type filter)
+  6) Exit
+- Auto save/load:
+  - Saves bookings to `bookings.csv`.
+  - Loads `bookings.csv` on startup.
 
 ## How it works
-- Stores room state and bookings in simple arrays.
-- On booking: validates room number, checks if already booked, then saves guest name, nights, start/end dates.
-- Uses cin for numbers and getline for strings; clears the input buffer after numeric input to avoid skipping lines.
+- On startup, `Hotel` loads bookings from `bookings.csv` (if it exists).
+- When booking, it validates input then checks room availability by detecting date range overlaps.
+- After add/cancel operations, it writes the updated state to `bookings.csv`.
+- Input is robust:
+  - Wrong numeric input doesn't crash the program; it asks again.
 
 ## Build & Run (Windows)
 
 ### Using g++ (MinGW)
-`
-g++ -std=c++11 -O2 -o hotel.exe main.cpp
+```bash
+g++ -std=c++17 -O2 -Wall -Wextra -pedantic main.cpp -o hotel.exe
 ./hotel.exe
-`
+```
 
 ### Using Microsoft cl
-`
-cl /EHsc /O2 main.cpp /Fe:hotel.exe
+```bat
+cl /std:c++17 /EHsc /W4 main.cpp /Fe:hotel.exe
 hotel.exe
-`
+```
 
 ## Input Format
 - Guest name (string)
@@ -42,7 +53,7 @@ hotel.exe
 - Start date (YYYY-MM-DD)
 - End date (YYYY-MM-DD)
 
-Note: After reading numbers, input buffering is handled so that date inputs via getline work correctly.
+Note: Dates are validated, and a booking is rejected if it overlaps with an existing booking for the same room.
 
 ## Repo
 GitHub: https://github.com/CyborkSpider/Hotel-Reservation
