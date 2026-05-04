@@ -26,6 +26,31 @@ const SlideCard = ({ title, subtitle, explanation, codeContent, id }) => (
   </div>
 );
 
+// ─── ImageCard: شرح شمال / صورة يمين ───────────────
+const ImageCard = ({ title, subtitle, explanation, imageSrc, imageAlt, id }) => (
+  <div className="slide-card image-card" id={id}>
+    <div className="explanation-side">
+      <div className="block-badge">{subtitle}</div>
+      <h2>{title}</h2>
+      <div className="text-content">
+        {explanation.map((item, i) =>
+          item.type === 'bullet'
+            ? <p key={i} className="bullet-item">→ {item.text}</p>
+            : <p key={i} className="para-item">{item.text}</p>
+        )}
+      </div>
+    </div>
+    <div className="code-side-scrollable image-side">
+      <div className="code-header">
+        <span className="lang-dot"></span> UML Diagram
+      </div>
+      <div className="image-stage">
+        <img src={imageSrc} alt={imageAlt} className="uml-image" />
+      </div>
+    </div>
+  </div>
+);
+
 // ─── ConsoleCard: شرح شمال / terminal يمين ──────────
 const ConsoleCard = ({ title, subtitle, explanation, output, id }) => (
   <div className="slide-card console-card" id={id}>
@@ -595,6 +620,15 @@ Enter room number: 9
 --- Bookings ---
 ID: 2 | Name: Ziad | Room: 9 (Standard) | Nights: 6 | From: 2026-05-02 | To: 2026-05-08`;
 
+const umlExplanation = [
+  { type: 'text', text: 'This UML class diagram summarizes the structure of our Hotel Reservation System and how the main classes interact.' },
+  { type: 'bullet', text: 'Core classes: Hotel, Booking, ConsoleUI, and Date' },
+  { type: 'bullet', text: 'Utilities functions provide validation, parsing, and CSV formatting' },
+  { type: 'bullet', text: 'Hotel owns bookings (composition) and persists data to bookings.csv' },
+  { type: 'bullet', text: 'ConsoleUI depends on Hotel to execute user actions from the menu' },
+  { type: 'bullet', text: 'Date + overlap logic prevents booking conflicts for the same room' },
+];
+
 // ─── MAIN APP ────────────────────────────────────────
 function App() {
   return (
@@ -675,9 +709,22 @@ function App() {
         </div>
       </section>
 
+      {/* ── UML Diagram ── */}
+      <section className="blocks-section">
+        <div className="section-label">03 — UML Diagram</div>
+        <ImageCard
+          id="uml"
+          title="System UML Class Diagram"
+          subtitle="Design Overview"
+          explanation={umlExplanation}
+          imageSrc="/assets/uml.jpg"
+          imageAlt="UML class diagram for the Hotel Reservation System"
+        />
+      </section>
+
       {/* ── Code Blocks Section ── */}
       <section className="blocks-section">
-        <div className="section-label">03 — Code Walkthrough</div>
+        <div className="section-label">04 — Code Walkthrough</div>
 
         <SlideCard
           id="block1a"
@@ -714,7 +761,7 @@ function App() {
         <SlideCard
           id="block2b"
           title="Hotel Class — Main Controller"
-          subtitle="Block 2 · Lines 197–297"
+          subtitle="Block 2 · Lines 197–303"
           explanation={block2bExplanation}
           codeContent={block2bCode}
         />
@@ -754,7 +801,7 @@ function App() {
         <SlideCard
           id="block3c"
           title="Input Helpers & UI Actions"
-          subtitle="Block 3 · Lines 392–548"
+          subtitle="Block 4 · Lines 392–548"
           explanation={block3cExplanation}
           codeContent={block3cCode}
         />
@@ -762,7 +809,7 @@ function App() {
         <SlideCard
           id="block3d"
           title="Main Function — Program Entry Point"
-          subtitle="Block 3 · Lines 549–554"
+          subtitle="Block 4 · Lines 549–554"
           explanation={block3dExplanation}
           codeContent={block3dCode}
         />
@@ -778,7 +825,7 @@ function App() {
 
       {/* ── Conclusion ── */}
       <section className="conclusion-section" id="conclusion">
-        <div className="section-label" style={{textAlign:'center', marginBottom:'40px'}}>04 — Conclusion</div>
+        <div className="section-label" style={{textAlign:'center', marginBottom:'40px'}}>05 — Conclusion</div>
         <div className="conclusion-grid">
           <div className="conclusion-text">
             <h2>What We Built</h2>
