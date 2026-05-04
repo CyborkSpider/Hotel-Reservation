@@ -36,7 +36,7 @@ Console-based hotel reservation program written in C++. Refactored to OOP with a
 ## UML Diagram
 
 <p align="center">
-  <img src="hotel-presentation\public\assets\uml.jpg" width="900" alt="UML Diagram">
+  <img src="https://raw.githubusercontent.com/CyborkSpider/Hotel-Reservation/main/hotel-presentation/public/assets/uml.jpg" width="900" alt="UML Diagram">
 </p>
 
 ---
@@ -46,8 +46,8 @@ Console-based hotel reservation program written in C++. Refactored to OOP with a
 Click below to watch the explanation video:
 
 <p align="center">
-  <a href="hotel-presentation\video presentation for system.mp4">
-    <img src="hotel-presentation\video presentation for system.mp4" width="700" alt="Watch Demo">
+  <a href="https://github.com/CyborkSpider/Hotel-Reservation/raw/main/hotel-presentation/video%20presentation%20for%20system.mp4">
+    <img src="https://raw.githubusercontent.com/CyborkSpider/Hotel-Reservation/main/hotel-presentation/public/assets/uml.jpg" width="700" alt="Watch Demo">
   </a>
 </p>
 
@@ -84,4 +84,27 @@ hotel.exe
 
 - Guest name (string)
 - Room number (int)
-- Number
+- Number of nights (int)
+- Start date (`YYYY-MM-DD`)
+- End date (`YYYY-MM-DD`)
+
+> Dates are validated, and bookings are rejected if overlaps exist.
+
+---
+
+## Repository
+
+GitHub: https://github.com/CyborkSpider/Hotel-Reservation
+
+---
+
+## Notes
+
+- Build artifacts are ignored via `.gitignore`
+- Code is kept simple and readable for learning purposes
+
+---
+
+## Author
+
+Developed by: Ziad Elgohary
