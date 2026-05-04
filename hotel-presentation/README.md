@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Employee Attendance Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based system for managing employee attendance, working hours, payroll calculations, and office location/IP verification.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## System Overview
 
-### `npm start`
+This system allows administrators to:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Manage employee attendance and departure
+- Calculate working hours automatically
+- Calculate salaries based on attendance records
+- Verify employee location using IP and office location
+- Manage multiple branches and clients
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## System UML Diagram
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <img src="PUT_YOUR_UML_IMAGE_LINK_HERE" alt="UML Diagram" width="900">
+</p>
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## System Explanation Video
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Click the image below to watch the system explanation video:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="center">
+  <a href="hotel-presentation\video presentation for system.mp4" target="_blank">
+    <img src="hotel-presentation\public\assets\uml.jpgE" alt="Watch System Demo" width="700">
+  </a>
+</p>
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Frontend: HTML, CSS, JavaScript
+- Backend: Python Django
+- Database: PostgreSQL
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features
 
-## Learn More
+✔ Employee Check-In / Check-Out  
+✔ Automatic Salary Calculation  
+✔ IP Verification  
+✔ Office Location Tracking  
+✔ Multi-Branch Support  
+✔ Multi-Tenant Architecture  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Installation
 
-### Code Splitting
+```bash
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Live Demo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+You can watch the full system explanation here:
 
-### Making a Progressive Web App
+PUT_YOUR_VIDEO_LINK_HERE
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Developed by: Eng. Ziad Mahmoud El-Gohary
