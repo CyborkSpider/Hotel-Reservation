@@ -19,7 +19,7 @@ This system allows administrators to:
 ## System UML Diagram
 
 <p align="center">
-  <img src="PUT_YOUR_UML_IMAGE_LINK_HERE" alt="UML Diagram" width="900">
+  <img src="hotel-presentation\public\assets\uml.jpg" alt="UML Diagram" width="900">
 </p>
 
 ---
@@ -30,7 +30,7 @@ Click the image below to watch the system explanation video:
 
 <p align="center">
   <a href="hotel-presentation\video presentation for system.mp4" target="_blank">
-    <img src="hotel-presentation\public\assets\uml.jpgE" alt="Watch System Demo" width="700">
+    <img src="hotel-presentation\video presentation for system.mp4" alt="Watch System Demo" width="700">
   </a>
 </p>
 
